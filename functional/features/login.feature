@@ -9,5 +9,6 @@ Feature: The Internet Guinea Pig Website
     When I try to quick view first product
     When I add item to cart and proceed to checkout
     When I Proceed to Payment page
+    Then Product details should be correct
 
 

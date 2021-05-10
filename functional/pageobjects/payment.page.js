@@ -1,20 +1,28 @@
 import $ from "webdriverio/build/commands/browser/$";
+import $$ from "webdriverio/build/commands/browser/$$";
 
 class PaymentPage {
+  
   get cartSummary() {
     return $$("#cart_summary tbody tr");
   }
-  async getProductDesciption(index = 1) {
-    return await (await this.cartSummary)[index].$$('td')[2].getText();
+  get totalAmount() {
+    return $("total_price");
   }
-  async getUnitPrice(index = 1) {
-    return await (await this.cartSummary)[index].$$('td')[3].getText();
+  async getProductDesciption(index = 0) {
+    return await this.cartSummary[index].$$("td")[2].getText();
   }
-  async getUnitcount(index = 1) {
-    return await (await this.cartSummary)[index].$$('td')[4].getText();
+  async getUnitPrice(index = 0) {
+    return await this.cartSummary[index].$$("td")[3].getText();
   }
-  async getTotal(index = 1) {
-    return await (await this.cartSummary)[index].$$('td')[4].getText();
+  async getUnitcount(index = 0) {
+    return await this.cartSummary[index].$$("td")[3].getText();
+  }
+  async getTotal(index = 0) {
+    return await this.cartSummary[index].$$("td")[5].getText();
+  }
+  async isTotalPriceDisplayed() {
+    return await this.totalAmount.isDisplayed();
   }
 }
 

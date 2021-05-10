@@ -7,7 +7,6 @@ class OrderSummaryPage {
   }
 
   async proceed() {
-    console.log("============================================");
     browser.execute(function(){
       this.proceedToCheckout.waitForClickable();
      this.proceedToCheckout.click();

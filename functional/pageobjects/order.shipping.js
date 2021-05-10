@@ -11,7 +11,6 @@ class OrderShipingPage {
       return $('#uniform-cgv [type="checkbox"]');
   }
   async checkServiceTerm() {
-    console.log("==============433454446==============================");
     browser.execute(function(){
       this.chkServiceTerm.waitForClickable();
      this.chkServiceTerm.click();
@@ -19,7 +18,6 @@ class OrderShipingPage {
     return this;
   }
   async proceed() {
-    console.log("===============000000000000000000000000000=============================");
     browser.execute(function(){
       this.proceedToCheckout.waitForClickable();
      this.proceedToCheckout.click();

@@ -7,6 +7,7 @@ import inputdata from '../data/input.data.json';
 import accountPage from '../pageobjects/account.page';
 import ProductListPage from '../pageobjects/productsList.page';
 import OrderSummaryPage from '../pageobjects/order.summary.page';
+import PaymentPage from '../pageobjects/payment.page';
 const username = inputdata.userName;
 const password = inputdata.password;
 
@@ -35,6 +36,10 @@ When(/^I Proceed to Payment page$/, async () => {
         await (await OrderSummaryPage.proceed()).proceed()
       ).checkServiceTerm()
     ).proceed();
+});
+When(/^Product details should be correct$/, async () => {
+    await  expect(PaymentPage.isTotalPriceDisplayed()).toBe(true);
+    await  expect(PaymentPage.getUnitcount()).toBe('1');
 });
 
 
