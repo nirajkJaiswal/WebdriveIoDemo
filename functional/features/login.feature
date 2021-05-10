@@ -5,9 +5,9 @@ Feature: The Internet Guinea Pig Website
     Given I am on the login page
     When User clicks on SignIn link
     When I login with valid username and password
-    Then I should see a flash message saying <message>
+    When I Click on Tshirt link
+    When I try to quick view first product
+    When I add item to cart and proceed to checkout
+    When I Proceed to Payment page
 
-    Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      # | foobar   | barfoo               | Your username is invalid!      |
+

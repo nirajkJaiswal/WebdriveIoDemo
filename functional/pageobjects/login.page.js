@@ -16,7 +16,6 @@ class LoginPage extends Page {
      * e.g. to login using username and password
      */
     async login (username, password) {
-        console.log("==================+++++++++++++++++++++++++++++++++++++++=============");
         await (await this.inputUsername).setValue(username);
         await (await this.inputPassword).setValue(password);
         await (await this.btnSubmit).click();
